@@ -23,10 +23,12 @@
         <label for="country">Enter password: </label>
         <input type="text" th:field="*{password}" id="password" placeholder="Enter password"/>
         <br>
-        <th:block th:each="role: ${listRoles}">
-            <input type="checkbox" th:field="*{roles}"
-                   th:text="${role.name}" th:value="${role.id}" class="m-2" />
-        </th:block>
+        <div>
+            <select th:field="*{roles}" multiple="multiple">
+                <option th:value="'ROLE_USER'" th:text="USER"></option>
+                <option th:value="'ROLE_ADMIN'" th:text="ADMIN"></option>
+            </select>
+        </div>
         <br>
         <br>
         <hr/>

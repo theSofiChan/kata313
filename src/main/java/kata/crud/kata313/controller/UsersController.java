@@ -52,7 +52,7 @@ public class UsersController {
         return "new";
     }
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    @PostMapping("/")
+    @PostMapping
     public String create(@ModelAttribute("user") User user) {
         userService.save(user);
         return "redirect:/admin/users";
