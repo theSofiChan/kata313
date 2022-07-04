@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All users</title>
+
+</head>
+<body>
+
+<h1>All Users</h1>
+<p>It's empty, and it's ok, press "Create new" to add a new User</p>
+
+<div id="innerDiv">
+    <table border="1">
+        <tr id="topTable">
+            <th>Name</th>
+            <th>Age</th>
+            <th>Country</th>
+            <th>Edit/Delete</th>
+        </tr>
+        <tr th:each="user : ${users}" id="tableRemaining">
+            <td th:utext=${user.getName()}>val</td>
+            <td th:utext=${user.getAge()}>val</td>
+            <td th:utext=${user.getCountry()}>val</td>
+            <td><a th:href="@{users/{id}(id=${user.getId()})}">Choose</a></td>
+        </tr>
+
+    </table>
+</div>
+<br/>
+<hr/>
+<a href="users/new"><input value="Create new"></a>
+<footer><a href="/logout"><input value="Logout"></a></footer>
+</body>
+</html>

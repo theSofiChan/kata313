@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<style>
+
+</style>
+<head>
+  <meta charset="UTF-8">
+  <title>User</title>
+
+</head>
+<body>
+<header>
+  <h1>This is you</h1>
+</header>
+<main>
+  <div>
+    <table border="1">
+      <tr id="topTable">
+        <th>Name</th>
+        <th>Age</th>
+        <th>Country</th>
+        <th>Email</th>
+        <th>Password</th>
+      </tr>
+      <tr id="tableRemaining">
+        <td th:utext = ${user.getName()}>val</td>
+        <td th:utext = ${user.getAge()}>val</td>
+        <td th:utext = ${user.getCountry()}>val</td>
+        <td th:utext = ${user.getEmail()}>val</td>
+        <td th:utext = ${user.getPassword()}>val</td>
+
+      </tr>
+
+    </table>
+
+
+  </div>
+  <div>
+      <a href="admin/users"><input value="Do admin staff"></a>
+  </div>
+  <footer><a href="/logout"><input value="Logout"></a></footer>
+</main>
+</body>
+</html>
